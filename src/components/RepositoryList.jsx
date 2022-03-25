@@ -9,7 +9,6 @@ export function RepositoryList() {
 
     useEffect(() => {
         fetch('https://api.github.com/users/TiagoM13/repos')
-        //fetch('https://api.github.com/orgs/rocketseat/repos')
             .then(response => response.json())
             .then(data => setRepositories(data))
     }, []);

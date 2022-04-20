@@ -9,7 +9,7 @@
 ## Ilustração da aplicação
 
   <h1 align="center">
-   <img src="./assets/github_explorer.png" alt="Aplicação Github Explorer">
+   <img src="./src/assets/github_explorer.png" alt="Aplicação Github Explorer">
   </h1>
 
 ## Ferramentas 

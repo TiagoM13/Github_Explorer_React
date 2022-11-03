@@ -1,35 +1,124 @@
 {
-  "name": "01-github-explorer",
+  "name": "github_explorer_react",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "description": "Project ReactJs",
   "scripts": {
-    "dev": "webpack serve",
-    "build": "cross-env NODE_ENV=production webpack"
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
+    "serve": "serve -s build",
+    "build:local": "react-scripts build",
+    "build:acceptance": "REACT_APP_ENV=acceptance yarn run build",
+    "build:production": "REACT_APP_ENV=production yarn run build",
+    "build:deploy:acceptance": "yarn build:acceptance && firebase deploy --only hosting:hml",
+    "build:deploy:production": "yarn build:production && firebase deploy --only hosting:prd",
+    "test": "react-scripts test --env jest-environment-jsdom-fourteen --watchAll=false --silent",
+    "jestrunner": "yarn react-scripts test --watchAll=false --env=jsdom",
+    "test:coverage": "react-scripts test --coverage --watchAll false --env jest-environment-jsdom-fourteen",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:ci": "yarn test --passWithNoTests --silent --noStackTrace --runInBand",
+    "eject": "react-scripts eject",
+    "code:check": "yarn code:lint; yarn code:format --check",
+    "code:clean": "yarn code:lint --fix; yarn code:format --write",
+    "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\"",
+    "code:format": "prettier './src/**/**.{js,jsx,ts,tsx}'",
+    "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "postinstall": "husky install; chmod ug+x .husky/*; npm run prepare",
+    "prepare": "is-ci || husky install"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,js,tsx,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest",
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.tsx"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!@hookform/*).+\\.[t|j]sx?$"
+    ]
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.6",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^27.0.1",
+    "@types/react": "^16.9.53",
+    "pullstate": "^1.24.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.1.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "sass": "^1.55.0",
+    "styled-components": "^5.2.1",
+    "typescript": "^4.0.3",
+    "web-vitals": "^0.2.4",
+    "webpack": "4.44.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-react": "^7.16.0",
-    "@babel/preset-typescript": "^7.16.7",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
-    "@types/react-dom": "^17.0.14",
-    "babel-loader": "^8.2.3",
-    "cross-env": "^7.0.3",
-    "css-loader": "^6.5.1",
-    "html-webpack-plugin": "^5.5.0",
-    "node-sass": "^6.0.1",
-    "react-refresh": "^0.11.0",
-    "sass-loader": "^12.3.0",
-    "style-loader": "^3.3.1",
-    "typescript": "^4.6.3",
-    "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.6.0"
-  }
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-flow": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@types/node": "^14.14.35",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-helmet": "^6.1.5",
+    "@types/react-icons": "^3.0.0",
+    "@types/react-router-dom": "^5.1.6",
+    "@types/styled-components": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "eslint": "7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.14.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^6.0.0",
+    "jest-environment-jsdom-fourteen": "^1.0.1",
+    "jest-location-mock": "^1.0.9",
+    "lint-staged": "10.5.4",
+    "prettier": "2.2.1",
+    "ts-jest": "^26.5.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "baseUrl": "./node_modules/@types",
+  "typeRoots": [
+    "types"
+  ],
+  "author": "Tiago Mota",
+  "license": "ISC"
 }

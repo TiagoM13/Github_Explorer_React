@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ImGithub } from "react-icons/im";
 
 import { RepositoryItem } from "components/RepositoryItem";
 
@@ -17,7 +18,11 @@ export const RepositoryList = () => {
 
   return (
     <section className="repository-list">
-      <h1>Lista de Repositórios</h1>
+      <div className="text-center">
+        <ImGithub size={30} />
+        <h1>Github Explorer</h1>
+      </div>
+      <h2>Lista de Repositórios</h2>
 
       <ul>
         {repositories.map((repository) => {

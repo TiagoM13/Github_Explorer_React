@@ -8,7 +8,9 @@ export const RepositoryItem = ({ repository }: IRespositoryItem) => {
       <strong>{repository.name}</strong>
       <p>{repository.description}</p>
 
-      <a href={repository.html_url}>Acessar repositório</a>
+      <a href={repository.html_url} target="_blank" rel="noreferrer">
+        Acessar repositório
+      </a>
     </li>
   );
 };

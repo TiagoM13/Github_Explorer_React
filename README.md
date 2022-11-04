@@ -1,25 +1,31 @@
-# Github Explorer - React App
+# 🚀 Github Explorer - React App
 
 <p>
-    Aplicação com React.Js, nesta aplicação podemos ver uma listagem de reposositórios do Github. 
+    Aplicação React.Js, nesta projeto é uma simples listagem de repositorios do Github através de sua API. 
 </p>
 
-<p>Neste projeto utilizei os Hooks do React, o <i>fetch</i> para interagir com a API do Github, utilizei também o Typescript para fazer a typagem dos componentes do React.js</p>
+<p>Neste projeto utilizei os Hooks do React, useState, useEffect com sua junção para criar um novo hook, o <i>Axios</i> para fazer arequisiçaõ da API do Github, utilizei também o Typescript para dar tipagem aos componentes do React.js, este projeto abrenge alguns fundamentos do React.js, esta aplicação proporciona conhecimento e aprendizagem</p>
 
-## Ilustração da aplicação
+## 🎯 Ilustração da aplicação
 
-  <h1 align="center">
-   <img src="./src/assets/github_explorer.png" alt="Aplicação Github Explorer">
-  </h1>
+  <img align="center" src="./src/assets/github_explorer.png" alt="Aplicação Github Explorer">
 
-## Ferramentas 
+## 🔧 Ferramentas 
 
   <ul>
+    <li>Vscode</li>
     <li>React.js</li>
-    <li>useEffect</li>
-    <li>useState</li>
-    <li>Fetch</li>
-    <li>API</li>
+    <li>React Hooks</li>
+    <li>React Icons</li>
+    <li>Axios</li>
+    <li>Resquest API</li>
     <li>SASS</li>
     <li>Typescript</li>
   </ul>
+
+## 👦 Autor
+
+  Tiago Mota
+
+  [LinkedIn](https://www.linkedin.com/in/tiago-mota-4690591a8/)
+  [Gmail](thyagomotha2000@gmail.com)

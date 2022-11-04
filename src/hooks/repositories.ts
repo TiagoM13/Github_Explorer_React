@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-import { RequestUser } from "constants/constants";
-
 import { IRepository } from "interfaces/repository";
 
 import { api } from "services/api";
@@ -12,7 +10,7 @@ export const useRespositories = () => {
   useEffect(() => {
     async function getRepositories() {
       await api
-        .get(RequestUser)
+        .get(`users/${process.env.REACT_APP_USER}/repos`)
         .then((response) => setRepositories(response.data));
     }
 

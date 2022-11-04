@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://api.github.com/",
+  baseURL: process.env.REACT_APP_REQUEST_USER,
 });

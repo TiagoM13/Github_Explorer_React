@@ -4,7 +4,7 @@
     Aplicação React.Js, este projeto é uma simples listagem de repositorios do Github através de sua API. 
 </p>
 
-<p>Neste projeto utilizei os Hooks do React, useState, useEffect com sua junção para criar um novo hook, o <i>Axios</i> para fazer arequisiçaõ da API do Github, utilizei também o Typescript para dar tipagem aos componentes do React.js, este projeto abrenge alguns fundamentos do React.js, esta aplicação proporciona conhecimento e aprendizagem</p>
+<p>Neste projeto utilizei os Hooks do React, useState, useEffect com sua junção para criar um novo hook, a utilização do <i>Axios</i> para fazer a requisiçaõ da API do Github, utilizei também o Typescript para dar tipagem aos componentes do React.js, este projeto abrenge alguns fundamentos do React.js, esta aplicação proporciona conhecimento e aprendizagem</p>
 
 ## 🎯 Ilustração da aplicação
 

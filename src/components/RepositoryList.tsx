@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ImGithub } from "react-icons/im";
 
 import { RepositoryItem } from "components/RepositoryItem";
 
-import { IRepository } from "interfaces/repository";
+import { useRespositories } from "hooks/repositories";
 
 import "styles/repositories.scss";
 
 export const RepositoryList = () => {
-  const [repositories, setRepositories] = useState<IRepository[]>([]);
-
-  useEffect(() => {
-    fetch("https://api.github.com/users/TiagoM13/repos")
-      .then((response) => response.json())
-      .then((data) => setRepositories(data));
-  }, []);
+  const { repositories } = useRespositories();
 
   return (
     <section className="repository-list">

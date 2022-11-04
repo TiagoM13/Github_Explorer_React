@@ -8,7 +8,7 @@ interface RespositoryItemProps {
   };
 }
 
-export function RepositoryItem({ repository }: RespositoryItemProps) {
+export const RepositoryItem = ({ repository }: RespositoryItemProps) => {
   return (
     <li>
       <strong>{repository.name}</strong>
@@ -17,4 +17,4 @@ export function RepositoryItem({ repository }: RespositoryItemProps) {
       <a href={repository.html_url}>Acessar repositório</a>
     </li>
   );
-}
+};

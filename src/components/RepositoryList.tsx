@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import { RepositoryItem } from "./RepositoryItem";
+import { RepositoryItem } from "components/RepositoryItem";
 
-import "../styles/repositories.scss";
+import "styles/repositories.scss";
 
 interface Repository {
   name: string;
@@ -10,7 +10,7 @@ interface Repository {
   html_url: string;
 }
 
-export function RepositoryList() {
+export const RepositoryList = () => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
 
   useEffect(() => {
@@ -32,4 +32,4 @@ export function RepositoryList() {
       </ul>
     </section>
   );
-}
+};

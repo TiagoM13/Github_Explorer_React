@@ -1,27 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { ImGithub } from "react-icons/im";
 
-import { RepositoryItem } from "./RepositoryItem";
+import { RepositoryItem } from "components/RepositoryItem";
 
-import "../styles/repositories.scss";
+import { useRespositories } from "hooks/repositories";
 
-interface Repository {
-  name: string;
-  description: string;
-  html_url: string;
-}
+import "styles/repositories.scss";
 
-export function RepositoryList() {
-  const [repositories, setRepositories] = useState<Repository[]>([]);
-
-  useEffect(() => {
-    fetch("https://api.github.com/users/TiagoM13/repos")
-      .then((response) => response.json())
-      .then((data) => setRepositories(data));
-  }, []);
+export const RepositoryList = () => {
+  const { repositories } = useRespositories();
 
   return (
     <section className="repository-list">
-      <h1>Lista de Repositórios</h1>
+      <div className="text-center">
+        <ImGithub size={30} />
+        <h1>Github Explorer</h1>
+      </div>
+      <h2>Lista de Repositórios</h2>
 
       <ul>
         {repositories.map((repository) => {
@@ -32,4 +27,4 @@ export function RepositoryList() {
       </ul>
     </section>
   );
-}
+};

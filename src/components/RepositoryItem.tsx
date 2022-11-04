@@ -1,20 +1,16 @@
 import React from "react";
 
-interface RespositoryItemProps {
-  repository: {
-    name: string;
-    description: string;
-    html_url: string;
-  };
-}
+import { IRespositoryItem } from "interfaces/repositoryItem";
 
-export function RepositoryItem({ repository }: RespositoryItemProps) {
+export const RepositoryItem = ({ repository }: IRespositoryItem) => {
   return (
     <li>
       <strong>{repository.name}</strong>
       <p>{repository.description}</p>
 
-      <a href={repository.html_url}>Acessar repositório</a>
+      <a href={repository.html_url} target="_blank" rel="noreferrer">
+        Acessar repositório
+      </a>
     </li>
   );
-}
+};

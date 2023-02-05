@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Project ReactJs",
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "serve": "serve -s build",
     "build:local": "react-scripts build",
     "build:acceptance": "REACT_APP_ENV=acceptance yarn run build",

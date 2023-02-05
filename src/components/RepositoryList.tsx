@@ -5,10 +5,12 @@ import { RepositoryItem } from "components/RepositoryItem";
 
 import { useRespositories } from "hooks/repositories";
 
+import { Loading } from "./Loading/Loading";
+
 import "styles/repositories.scss";
 
 export const RepositoryList = () => {
-  const { repositories } = useRespositories();
+  const { repositories, loading } = useRespositories();
 
   return (
     <section className="repository-list">
@@ -18,13 +20,17 @@ export const RepositoryList = () => {
       </div>
       <h2>Lista de Repositórios</h2>
 
-      <ul>
-        {repositories.map((repository) => {
-          return (
-            <RepositoryItem key={repository.name} repository={repository} />
-          );
-        })}
-      </ul>
+      {loading ? (
+        <Loading />
+      ) : (
+        <ul>
+          {repositories.map((repository) => {
+            return (
+              <RepositoryItem key={repository.name} repository={repository} />
+            );
+          })}
+        </ul>
+      )}
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { RepositoryList } from "components/RepositoryList";
+import { RepositoryList } from "components/RepositoryList/RepositoryList";
 
 import "styles/global.scss";
 

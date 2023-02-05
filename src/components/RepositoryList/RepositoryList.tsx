@@ -1,11 +1,10 @@
 import React from "react";
 import { ImGithub } from "react-icons/im";
 
-import { RepositoryItem } from "components/RepositoryItem";
+import { Loading } from "components/Loading/Loading";
+import { RepositoryItem } from "components/RepositoryItem/RepositoryItem";
 
 import { useRespositories } from "hooks/repositories";
-
-import { Loading } from "./Loading/Loading";
 
 import "styles/repositories.scss";
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { FaListUl } from "react-icons/fa";
 import { ImGithub } from "react-icons/im";
 
 import { Loading } from "components/Loading/Loading";
@@ -17,7 +18,10 @@ export const RepositoryList = () => {
         <ImGithub size={30} />
         <h1>Github Explorer</h1>
       </div>
-      <h2>Lista de Repositórios</h2>
+      <div className="title-list">
+        <FaListUl size={22} />
+        <h2>Lista de Repositórios</h2>
+      </div>
 
       {loading ? (
         <Loading />

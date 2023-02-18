@@ -12,9 +12,16 @@ section.repository-list {
     }
    }
 
-    h2 {
+    .title-list {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 1rem;
-      text-decoration: underline;
+
+      h2 {
+        font-weight: 700;
+        text-decoration: underline;
+      }
     }
 
     ul {
@@ -23,6 +30,7 @@ section.repository-list {
         li {
             background: var(--gray);
             padding: 1.5rem 1.25rem;
+            animation: reveal 0.3s ease-in-out;
 
             border-radius: 1rem;
 
@@ -56,4 +64,15 @@ section.repository-list {
             }
         }
     }
+}
+
+@keyframes reveal {
+  0% { 
+    opacity: 0;
+    transform: translate(0, 40%); 
+  };
+  100% { 
+    opacity: 1; 
+    transform: translate(0, 0) 
+  };
 }
